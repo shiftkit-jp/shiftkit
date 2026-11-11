@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>特定商取引法に基づく表記 | ShiftKit</title>
+<!-- site-meta --><link rel="icon" href="icon.png"><meta name="description" content="希望シフトの自動入力・キャスト管理・在庫管理・店長ツールを、Googleスプレッドシート1枚で。月額0円、買い切り1,480円から。"><meta property="og:title" content="特定商取引法に基づく表記 | ShiftKit"><meta property="og:description" content="希望シフトの自動入力・キャスト管理・在庫管理・店長ツールを、Googleスプレッドシート1枚で。月額0円、買い切り1,480円から。"><meta property="og:type" content="website"><meta property="og:url" content="https://harutomaronsmd-bot.github.io/shiftkit/tokushoho.html"><meta property="og:image" content="https://harutomaronsmd-bot.github.io/shiftkit/icon.png"><meta name="twitter:card" content="summary"><!-- /site-meta -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+/* Layout: 店長の手書きタイムテーブル（方眼＋蛍光ペン）を下敷きにした1カラム。セル＝情報の単位 */
+:root {
+  --paper: #fbfbf8;
+  --ink: #1f2433;
+  --muted: #5d6474;
+  --rule: #dfe1e6;
+  --cell: #ffffff;
+  --off: #e9eaee;
+  --pink: #ff5d8f;
+  --pink-soft: #ffd6e2;
+  --orange: #ff9b3d;
+  --blue: #3fa7e0;
+  --green: #5cc98a;
+  --font-display: "Dela Gothic One", "Hiragino Kaku Gothic StdN", sans-serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #15171d; --ink: #eceef3; --muted: #a3a9b8; --rule: #2c303a;
+    --cell: #1c1f27; --off: #262a33; --pink: #ff74a0; --pink-soft: #4a2333;
+    --orange: #ffaa5c; --blue: #5bb8ec; --green: #6fd69a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #15171d; --ink: #eceef3; --muted: #a3a9b8; --rule: #2c303a;
+  --cell: #1c1f27; --off: #262a33; --pink: #ff74a0; --pink-soft: #4a2333;
+  --orange: #ffaa5c; --blue: #5bb8ec; --green: #6fd69a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  background-image: linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+}
+.wrap {
+  max-width: 980px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: 56px; }
+h1, h2 { font-family: var(--font-display); font-weight: 400; text-wrap: balance; line-height: 1.35; margin: 0; }
+h1 { font-size: clamp(30px, 6vw, 52px); }
+h2 { font-size: clamp(22px, 4vw, 32px); }
+h3 { font-size: 18px; margin: 0; }
+p { margin: 0; }
+.eyebrow { font-size: 13px; letter-spacing: .12em; color: var(--muted); font-weight: 700; }
+.mark { background: linear-gradient(transparent 55%, var(--pink-soft) 55%); padding: 0 2px; }
+.panel { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 28px; }
+
+/* hero */
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding-block: 64px 48px; }
+.hero > * { min-width: 0; }
+.hero .lead { display: grid; gap: 22px; }
+.hero p.sub { color: var(--muted); font-size: 17px; max-width: 34em; }
+.points { display: flex; flex-wrap: wrap; gap: 8px; }
+.points span { font-size: 13px; font-weight: 700; border: 1.5px solid var(--ink); border-radius: 999px; padding: 2px 12px; background: var(--paper); }
+.cta { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--paper); font-weight: 700; text-decoration: none; padding: 14px 22px; border-radius: 6px; width: fit-content; }
+.cta:focus-visible, .copy:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+/* shift grid demo */
+.sheet { background: var(--cell); border: 1.5px solid var(--ink); border-radius: 6px; overflow-x: auto; box-shadow: 6px 6px 0 var(--ink); }
+.sheet table { border-collapse: collapse; width: 100%; font-family: var(--font-mono); font-size: 13px; font-variant-numeric: tabular-nums; }
+.sheet th, .sheet td { border: 1px solid var(--rule); padding: 7px 6px; text-align: center; white-space: nowrap; }
+.sheet thead th { background: var(--off); font-weight: 500; }
+.sheet td.name { text-align: left; font-family: var(--font-body); font-weight: 700; padding-left: 10px; }
+.sheet td.off { color: var(--muted); background: var(--off); }
+.sheet td.in { animation: fill .5s ease-out both; }
+.sheet td.in.p { background: var(--pink-soft); }
+.sat { color: var(--blue); } .sun { color: var(--pink); }
+@keyframes fill { from { background: var(--cell); color: transparent; } }
+.patterns { display: grid; gap: 20px; min-width: 0; }
+.sheet-head { font-family: var(--font-body); font-size: 13px; font-weight: 700; padding: 8px 12px; border-bottom: 1px solid var(--rule); background: var(--off); }
+.sheet-cap { font-size: 12px; color: var(--muted); padding: 8px 12px; border-top: 1px solid var(--rule); font-family: var(--font-body); }
+
+/* pains */
+.pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.pain { background: var(--paper); border-top: 4px solid var(--pink); padding: 20px; display: grid; gap: 8px; align-content: start; }
+.pain:nth-child(2) { border-color: var(--orange); }
+.pain:nth-child(3) { border-color: var(--blue); }
+.pain p { color: var(--muted); font-size: 15px; }
+
+/* steps */
+.steps { display: grid; gap: 14px; margin-top: 28px; counter-reset: s; }
+.step { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start; background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 20px; }
+.step::before { counter-increment: s; content: counter(s); font-family: var(--font-display); font-size: 26px; width: 48px; height: 48px; display: grid; place-items: center; background: var(--ink); color: var(--paper); border-radius: 50%; }
+.step div { display: grid; gap: 4px; min-width: 0; }
+.step p { color: var(--muted); font-size: 15px; }
+.chip { font-family: var(--font-mono); background: var(--off); border-radius: 4px; padding: 0 6px; font-size: 14px; color: var(--ink); }
+
+/* positions */
+.cast { display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: center; margin-top: 8px; }
+.cast > * { min-width: 0; }
+.cast ul { margin: 16px 0 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.pos td.o, .stock td.o { color: #1d7a45; background: color-mix(in srgb, var(--green) 28%, var(--cell)); }
+.pos td.t, .stock td.t { background: color-mix(in srgb, var(--orange) 26%, var(--cell)); }
+.pos td.x { color: var(--muted); background: var(--off); }
+.stock td.ng { color: var(--pink); font-weight: 700; background: var(--pink-soft); }
+.lv { font-family: var(--font-body); font-size: 12px; font-weight: 700; border-radius: 999px; padding: 1px 8px; margin-left: 6px; border: 1px solid currentColor; }
+:root[data-theme="dark"] .pos td.o, :root[data-theme="dark"] .stock td.o { color: var(--green); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pos td.o, :root:not([data-theme="light"]) .stock td.o { color: var(--green); } }
+
+/* price */
+.prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.prices.two { grid-template-columns: repeat(2, 1fr); margin-top: 16px; }
+.price { background: var(--paper); border: 1.5px solid var(--rule); border-radius: 6px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+.price.feat { border-color: var(--ink); box-shadow: 6px 6px 0 var(--pink); }
+.price .yen { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
+.price .yen small { font-family: var(--font-body); font-size: 13px; color: var(--muted); margin-left: 4px; }
+.price ul { margin: 0; padding-left: 1.2em; font-size: 15px; color: var(--muted); display: grid; gap: 4px; }
+.note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+/* faq */
+.faq { margin-top: 24px; display: grid; gap: 10px; }
+.faq details { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 18px; }
+.faq summary { font-weight: 700; cursor: pointer; }
+.faq details p { margin-top: 8px; color: var(--muted); }
+
+/* final */
+.final { background: var(--ink); color: var(--paper); border-radius: 6px; padding: 36px 28px; display: grid; gap: 16px; }
+.final p { color: color-mix(in srgb, var(--paper) 78%, var(--ink)); }
+.line-id { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.line-id code { font-family: var(--font-mono); background: color-mix(in srgb, var(--paper) 12%, var(--ink)); padding: 8px 12px; border-radius: 4px; }
+.line-add { background: var(--green); color: #10301d; }
+.form-link { background: transparent; color: var(--paper); border: 1.5px solid color-mix(in srgb, var(--paper) 60%, var(--ink)); }
+.copy { font: inherit; font-weight: 700; background: var(--green); color: #10301d; border: 0; border-radius: 4px; padding: 8px 14px; cursor: pointer; }
+footer { text-align: center; color: var(--muted); font-size: 13px; padding-block: 32px; }
+
+@media (max-width: 760px) {
+  .hero, .cast { grid-template-columns: 1fr; }
+  .pains, .prices, .prices.two { grid-template-columns: 1fr; }
+  .step { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .sheet td.in { animation: none; } }
+
+
+
+
+/* site header / footer */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--paper); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; flex-wrap: wrap; }
+.brand { font-family: var(--font-display); font-size: 20px; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.brand i { width: 22px; height: 22px; border-radius: 5px; background: var(--ink); display: inline-grid; place-items: center; }
+.brand i::after { content: ""; width: 12px; height: 4px; border-radius: 2px; background: var(--pink); }
+.site-nav { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; font-weight: 700; }
+.site-nav a { color: var(--muted); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); border-color: var(--pink); }
+.site-nav a:focus-visible, .brand:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.site-foot { border-top: 1px solid var(--rule); background: var(--paper); padding-block: 28px; font-size: 13px; color: var(--muted); }
+.site-foot .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+.site-foot nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.site-foot a { color: var(--muted); }
+
+/* sub pages */
+.page-title { padding-block: 48px 8px; display: grid; gap: 10px; }
+.page-title p { color: var(--muted); max-width: 40em; }
+.doc { padding-block: 24px 56px; display: grid; gap: 36px; max-width: 760px; }
+.doc section { padding: 0; display: grid; gap: 12px; }
+.doc h2 { font-size: clamp(20px, 3.4vw, 26px); }
+.doc ol, .doc ul { margin: 0; padding-left: 1.4em; display: grid; gap: 6px; }
+.doc p { color: var(--ink); }
+.doc .muted { color: var(--muted); font-size: 14px; }
+.tbl { overflow-x: auto; background: var(--cell); border: 1px solid var(--rule); border-radius: 6px; }
+.tbl table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.tbl th, .tbl td { border-bottom: 1px solid var(--rule); padding: 10px 12px; text-align: left; vertical-align: top; }
+.tbl tr:last-child td { border-bottom: 0; }
+.tbl thead th { background: var(--off); font-size: 13px; }
+.tbl th[scope=row] { width: 32%; background: var(--off); font-size: 14px; }
+.tbl td.c { text-align: center; font-family: var(--font-mono); }
+.callout { border-left: 4px solid var(--orange); background: var(--cell); padding: 12px 16px; border-radius: 0 6px 6px 0; font-size: 15px; }
+.todo { background: var(--pink-soft); font-weight: 700; padding: 0 4px; border-radius: 3px; }
+.contact-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.contact-cards > div { background: var(--cell); border: 1.5px solid var(--rule); border-radius: 6px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+@media (max-width: 760px) { .contact-cards { grid-template-columns: 1fr; } }
+
+</style>
+</head>
+<body>
+<header class="site-head"><div class="wrap"><a class="brand" href="index.html"><i></i>ShiftKit</a><nav class="site-nav" aria-label="サイト内"><a href="index.html">トップ</a><a href="pricing.html">料金</a><a href="guide.html">使い方</a><a href="faq.html">よくある質問</a><a href="contact.html">お問い合わせ</a></nav></div></header>
+<main class="wrap">
+  <div class="page-title"><span class="eyebrow">ShiftKit</span><h1>特定商取引法に基づく表記</h1><p>有料版のテンプレートと導入代行の販売に関する表示です。</p></div>
+  <div class="doc">
+
+<section>
+<div class="tbl"><table><tbody><tr><th scope="row">販売事業者</th><td>島田遥大</td></tr><tr><th scope="row">運営責任者</th><td>島田遥大</td></tr><tr><th scope="row">所在地</th><td>請求があった場合には、遅滞なく開示します</td></tr><tr><th scope="row">電話番号</th><td>請求があった場合には、遅滞なく開示します</td></tr><tr><th scope="row">お問い合わせ</th><td><a href="https://forms.gle/Kt1vzHY42xLn5i1V6" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr><tr><th scope="row">販売価格</th><td><a href="pricing.html">料金</a>のページに記載しています</td></tr><tr><th scope="row">商品代金以外の必要料金</th><td>なし（インターネット接続料金・通信料金はお客様のご負担です）</td></tr><tr><th scope="row">お支払い方法</th><td>クレジットカード（VISA・Mastercard・JCB・American Express・Diners Club）。決済はSquareの決済ページで行います</td></tr><tr><th scope="row">お支払い時期</th><td>ご注文時にお支払いが確定します（カードの引き落とし日は各カード会社の規定によります）</td></tr><tr><th scope="row">商品の引渡し時期</th><td>テンプレート：決済完了後、すぐにコピー用リンクをお送りします。導入代行：お申し込み後、日程を相談のうえ実施します</td></tr><tr><th scope="row">返品・キャンセル</th><td>デジタル商品の性質上、購入後の返品・返金はお受けしていません。正しく動かない場合は、お問い合わせいただければ解決まで対応します</td></tr><tr><th scope="row">動作環境</th><td>Googleアカウント、パソコンのWebブラウザ（Google Chrome推奨）</td></tr></tbody></table></div>
+</section>
+
+  </div>
+</main>
+<footer class="site-foot"><div class="wrap"><span>© ShiftKit　シフトも、人も、在庫も。</span><nav aria-label="規約"><a href="tokushoho.html">特定商取引法に基づく表記</a><a href="privacy.html">プライバシーポリシー</a><a href="https://line.me/R/ti/p/@345rheyx" target="_blank" rel="noopener">LINE @345rheyx</a></nav></div></footer>
+</body>
+</html>
