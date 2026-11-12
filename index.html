@@ -119,6 +119,7 @@ p { margin: 0; }
 .price .yen { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
 .price .yen small { font-family: var(--font-body); font-size: 13px; color: var(--muted); margin-left: 4px; }
 .price ul { margin: 0; padding-left: 1.2em; font-size: 15px; color: var(--muted); display: grid; gap: 4px; }
+.price .buy { justify-content: center; width: 100%; margin-top: 6px; }
 .note { font-size: 13px; color: var(--muted); margin-top: 14px; }
 
 /* faq */
@@ -143,6 +144,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
   .step { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .sheet td.in { animation: none; } }
+
 
 
 
@@ -182,6 +184,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .tbl th[scope=row] { width: 32%; background: var(--off); font-size: 14px; }
 .tbl td.c { text-align: center; font-family: var(--font-mono); }
 .callout { border-left: 4px solid var(--orange); background: var(--cell); padding: 12px 16px; border-radius: 0 6px 6px 0; font-size: 15px; }
+.buy-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.buy-row .cta { font-size: 15px; padding: 12px 18px; }
+.buy-feat { background: var(--pink) !important; color: #fff !important; }
 .todo { background: var(--pink-soft); font-weight: 700; padding: 0 4px; border-radius: 3px; }
 .contact-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .contact-cards > div { background: var(--cell); border: 1.5px solid var(--rule); border-radius: 6px; padding: 24px; display: grid; gap: 10px; align-content: start; }
@@ -307,15 +312,15 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="eyebrow">料金</span>
     <h2>月額0円。必要なところまで選べます</h2>
     <div class="prices">
-      <div class="price"><h3>シフト＋キャスト管理</h3><div class="yen">1,480<small>円・買い切り</small></div><ul><li>希望シフトの自動入力</li><li>キャスト名簿（レベル → ポジション○△×）</li><li>フィードバック記録・キャストカード</li><li>人件費率・扶養アラート・代わり探し</li></ul></div>
-      <div class="price"><h3>在庫＋レジ連携</h3><div class="yen">1,480<small>円・買い切り</small></div><ul><li>商品マスタ・入出庫・発注リスト・棚卸</li><li>在庫アラートメール</li><li>Square自動連携・レジCSV取り込み</li><li>賞味期限・消費期限の管理</li></ul></div>
-      <div class="price feat"><h3>全部セット</h3><div class="yen">2,480<small>円・買い切り</small></div><ul><li>左の2つがすべて入ったセット</li><li>開店・閉店チェック／レジ締め／連絡ノート</li><li>導入マニュアル付き</li><li>自分で約15分で設定</li></ul></div>
+      <div class="price"><h3>シフト＋キャスト管理</h3><div class="yen">1,480<small>円・買い切り</small></div><ul><li>希望シフトの自動入力</li><li>キャスト名簿（レベル → ポジション○△×）</li><li>フィードバック記録・キャストカード</li><li>人件費率・扶養アラート・代わり探し</li></ul><a class="cta buy" href="https://square.link/u/pCRffTxU" target="_blank" rel="noopener">購入する</a></div>
+      <div class="price"><h3>在庫＋レジ連携</h3><div class="yen">1,480<small>円・買い切り</small></div><ul><li>商品マスタ・入出庫・発注リスト・棚卸</li><li>在庫アラートメール</li><li>Square自動連携・レジCSV取り込み</li><li>賞味期限・消費期限の管理</li></ul><a class="cta buy" href="https://square.link/u/f17P69Q8" target="_blank" rel="noopener">購入する</a></div>
+      <div class="price feat"><h3>全部セット</h3><div class="yen">2,480<small>円・買い切り</small></div><ul><li>左の2つがすべて入ったセット</li><li>開店・閉店チェック／レジ締め／連絡ノート</li><li>導入マニュアル付き</li><li>自分で約15分で設定</li></ul><a class="cta buy" href="https://square.link/u/JgsywBUz" target="_blank" rel="noopener" style="background:var(--pink);color:#fff">購入する</a></div>
     </div>
     <div class="prices two">
       <div class="price"><h3>無料版</h3><div class="yen">0<small>円</small></div><ul><li>希望フォーム → シフト表の自動入力</li><li>LINE公式アカウントで配布</li></ul></div>
       <div class="price"><h3>導入代行</h3><div class="yen">9,800<small>円〜</small></div><ul><li>お店のシフト表に合わせて設定</li><li>ポジション・ルールの整理</li><li>初回の使い方説明まで</li></ul></div>
     </div>
-    <p class="note">Googleアカウントがあれば動きます。</p>
+    <p class="note">Googleアカウントがあれば動きます。お支払いはSquareの決済ページ（クレジットカード）。購入後24時間以内に、メールでコピー用リンクをお送りします。</p>
   </section>
 
   <section>
