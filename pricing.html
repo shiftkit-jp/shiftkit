@@ -120,7 +120,7 @@ p { margin: 0; }
 
 /* price */
 .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
-.prices.two { grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+.prices.two { grid-template-columns: repeat(2, 1fr); margin-top: 16px; }
 .price { background: var(--paper); border: 1.5px solid var(--rule); border-radius: 6px; padding: 24px; display: grid; gap: 10px; align-content: start; }
 .price.feat { border-color: var(--ink); box-shadow: 6px 6px 0 var(--pink); }
 .price .yen { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
@@ -151,6 +151,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
   .step { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .sheet td.in { animation: none; } }
+
 
 
 
@@ -208,7 +209,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   <div class="doc">
 
 <section><h2>メニューと価格</h2>
-<div class="tbl"><table><thead><tr><th scope="col">メニュー</th><th scope="col">価格</th><th scope="col">内容</th></tr></thead><tbody><tr><td>無料版</td><td>0円</td><td>希望フォーム → シフト表の自動入力、未登録の回答の保管、1日の出勤人数</td></tr><tr><td>シフト＋キャスト管理</td><td>1,480円（買い切り）</td><td>無料版の機能＋キャスト名簿（レベル→ポジション○△×）、フィードバック記録、キャストカード、店長ツール（勤務時間・概算給与・人件費率、扶養の上限アラート、欠勤の代わり探し、教育の進み具合、開店・閉店チェック／レジ締め／連絡ノート）</td></tr><tr><td>在庫＋レジ連携</td><td>1,480円（買い切り）</td><td>無料版の機能＋商品マスタ、入出庫フォーム、発注リスト、棚卸、在庫アラート、Square連携、レジCSV取り込み、賞味期限・消費期限の管理、開店・閉店チェック／レジ締め／連絡ノート</td></tr><tr><td>全部セット</td><td>2,480円（買い切り）</td><td>上の2つがすべて入ったセット。単品2つより480円おトク</td></tr><tr><td>導入代行</td><td>9,800円〜</td><td>お店のシフト表に合わせた設定、ポジション・ルールの整理、初回の使い方説明</td></tr><tr><td>サポートプラン（任意）</td><td>月額980円</td><td>有料版を買った方だけのオプション。LINEの質問に24時間以内に返信、最新版シートの配布、月1回の設定相談、制度変更（扶養の上限など）の案内。いつでも解約でき、解約してもシートはそのまま使えます</td></tr></tbody></table></div>
+<div class="tbl"><table><thead><tr><th scope="col">メニュー</th><th scope="col">価格</th><th scope="col">内容</th></tr></thead><tbody><tr><td>無料版</td><td>0円</td><td>希望フォーム → シフト表の自動入力、未登録の回答の保管、1日の出勤人数</td></tr><tr><td>シフト＋キャスト管理</td><td>1,480円（買い切り）</td><td>無料版の機能＋キャスト名簿（レベル→ポジション○△×）、フィードバック記録、キャストカード、店長ツール（勤務時間・概算給与・人件費率、扶養の上限アラート、欠勤の代わり探し、教育の進み具合、開店・閉店チェック／レジ締め／連絡ノート）</td></tr><tr><td>在庫＋レジ連携</td><td>1,480円（買い切り）</td><td>無料版の機能＋商品マスタ、入出庫フォーム、発注リスト、棚卸、在庫アラート、Square連携、レジCSV取り込み、賞味期限・消費期限の管理、開店・閉店チェック／レジ締め／連絡ノート</td></tr><tr><td>全部セット</td><td>2,480円（買い切り）</td><td>上の2つがすべて入ったセット。単品2つより480円おトク</td></tr><tr><td>サポートプラン（任意）</td><td>月額980円</td><td>有料版を買った方だけのオプション。お店のシフト表に合わせた初期設定の代行と使い方説明、LINEの質問に24時間以内に返信、最新版シートの配布、月1回の設定相談、制度変更（扶養の上限など）の案内。いつでも解約でき、解約してもシートはそのまま使えます</td></tr></tbody></table></div>
 </section>
 <section><h2>機能の比較</h2>
 <div class="tbl"><table><thead><tr><th scope="col">機能</th><th scope="col">無料版</th><th scope="col">シフト＋キャスト</th><th scope="col">在庫＋レジ</th><th scope="col">全部セット</th></tr></thead><tbody><tr><td>希望シフトの自動入力</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr><tr><td>キャスト名簿・ポジション○△×</td><td class="c">×</td><td class="c">○</td><td class="c">×</td><td class="c">○</td></tr><tr><td>フィードバック記録・キャストカード</td><td class="c">×</td><td class="c">○</td><td class="c">×</td><td class="c">○</td></tr><tr><td>在庫管理・発注リスト・棚卸</td><td class="c">×</td><td class="c">×</td><td class="c">○</td><td class="c">○</td></tr><tr><td>レジ連携（Square・CSV）</td><td class="c">×</td><td class="c">×</td><td class="c">○</td><td class="c">○</td></tr><tr><td>勤務時間・概算給与・人件費率の集計</td><td class="c">×</td><td class="c">○</td><td class="c">×</td><td class="c">○</td></tr><tr><td>扶養の上限アラート</td><td class="c">×</td><td class="c">○</td><td class="c">×</td><td class="c">○</td></tr><tr><td>欠勤の代わり探し・教育の進み具合</td><td class="c">×</td><td class="c">○</td><td class="c">×</td><td class="c">○</td></tr><tr><td>開店・閉店チェック／レジ締め／連絡ノート</td><td class="c">×</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr><tr><td>賞味期限・消費期限の管理</td><td class="c">×</td><td class="c">×</td><td class="c">○</td><td class="c">○</td></tr></tbody></table></div>
@@ -223,8 +224,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <ol><li>上のボタンから購入する（支払いのときにメールアドレスを入力してください）</li>
 <li>24時間以内に、入力いただいたメールアドレスへコピー用リンクをお送りします</li>
 <li>リンクを開いて「コピーを作成」し、<a href="guide.html">使い方</a>の「使い始める準備」に沿って初期設定（約10分）</li></ol>
-<p class="muted">動かすのに必要なのはGoogleアカウントとパソコンのブラウザだけです。追加の月額料金はかかりません。導入代行は<a href="contact.html">お問い合わせ</a>からご相談ください。</p>
-<div class="callout"><strong>サポートプラン（任意・月額980円）</strong>：有料版を買った方だけが入れるオプションです。LINEの質問に24時間以内に返信、最新版シートの配布、月1回の設定相談つき。お申し込みは、LINE公式アカウントで「サポート」と送ってください。いつでも解約でき、解約してもシートはそのまま使えます。</div>
+<p class="muted">動かすのに必要なのはGoogleアカウントとパソコンのブラウザだけです。追加の月額料金はかかりません。設定を任せたい方は、下のサポートプランをご利用ください。</p>
+<div class="callout"><strong>サポートプラン（任意・月額980円）</strong>：有料版を買った方だけが入れるオプションです。お店のシフト表に合わせた初期設定の代行、LINEの質問に24時間以内に返信、最新版シートの配布、月1回の設定相談つき。お申し込みは、LINE公式アカウントで「サポート」と送ってください。いつでも解約でき、解約してもシートはそのまま使えます。</div>
 </section>
 <section><h2>まずは無料版から</h2>
 <p>LINE公式アカウント <a href="https://line.me/R/ti/p/@345rheyx" target="_blank" rel="noopener">@345rheyx</a> を友だち追加して「無料版」と送ると、テンプレートのリンクが届きます。</p>
