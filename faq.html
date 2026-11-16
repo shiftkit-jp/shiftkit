@@ -120,7 +120,7 @@ p { margin: 0; }
 
 /* price */
 .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
-.prices.two { grid-template-columns: repeat(2, 1fr); margin-top: 16px; }
+.prices.two { grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
 .price { background: var(--paper); border: 1.5px solid var(--rule); border-radius: 6px; padding: 24px; display: grid; gap: 10px; align-content: start; }
 .price.feat { border-color: var(--ink); box-shadow: 6px 6px 0 var(--pink); }
 .price .yen { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
@@ -151,6 +151,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
   .step { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .sheet td.in { animation: none; } }
+
 
 
 
@@ -208,7 +209,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 <section><h2>導入前の質問</h2>
 <div class="faq">
-<details open><summary>月額料金はかかりますか？</summary><p>かかりません。Googleアカウントがあれば動きます。有料版も買い切りです。</p></details>
+<details open><summary>月額料金はかかりますか？</summary><p>かかりません。Googleアカウントがあれば動きます。有料版も買い切りです。サポートが欲しい方だけ、有料版を買ったあとに任意のサポートプラン（月額980円）に入れます。</p></details>
+<details><summary>サポートプランでは何をしてもらえますか？</summary><p>LINEでの質問に24時間以内に返信、新しい機能や改良版シートの配布、月1回の設定相談（ポジション・時給・チェック項目の見直しなど）、扶養の上限など制度が変わったときの案内です。有料版を買った方が対象で、いつでも解約できます。</p></details>
 <details><summary>今のシフト表のレイアウトを変える必要は？</summary><p>ありません。日付が横に、名前が縦に並んでいる表なら、そのまま読み取ります。「山田（週3)」のようなカッコ付きの名前も大丈夫です。</p></details>
 <details><summary>スタッフはアプリを入れる必要がありますか？</summary><p>ありません。LINEで届いたURLを開いて、Googleフォームに入力するだけです。ログインも不要です。</p></details>
 <details><summary>どんなお店・業種で使えますか？</summary><p>業種を問いません。飲食店のキッチン・ホール、カフェ、小売店、美容室・サロン、ホテル・旅館、アミューズメント施設、介護・福祉、工場・倉庫、イベント運営など、シフトで働く人がいる職場なら勤務枠・ポジション・スキルを自由に設定できます。</p></details>

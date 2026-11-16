@@ -113,7 +113,7 @@ p { margin: 0; }
 
 /* price */
 .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
-.prices.two { grid-template-columns: repeat(2, 1fr); margin-top: 16px; }
+.prices.two { grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
 .price { background: var(--paper); border: 1.5px solid var(--rule); border-radius: 6px; padding: 24px; display: grid; gap: 10px; align-content: start; }
 .price.feat { border-color: var(--ink); box-shadow: 6px 6px 0 var(--pink); }
 .price .yen { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
@@ -144,6 +144,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
   .step { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .sheet td.in { animation: none; } }
+
 
 
 
@@ -319,6 +320,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <div class="prices two">
       <div class="price"><h3>無料版</h3><div class="yen">0<small>円</small></div><ul><li>希望フォーム → シフト表の自動入力</li><li>LINE公式アカウントで配布</li></ul></div>
       <div class="price"><h3>導入代行</h3><div class="yen">9,800<small>円〜</small></div><ul><li>お店のシフト表に合わせて設定</li><li>ポジション・ルールの整理</li><li>初回の使い方説明まで</li></ul></div>
+      <div class="price"><h3>サポートプラン（任意）</h3><div class="yen">980<small>円／月</small></div><ul><li>有料版を買った方だけのオプション</li><li>LINEの質問に24時間以内に返信</li><li>最新版シートの配布・月1回の設定相談</li><li>いつでも解約OK（シートはそのまま使える）</li></ul></div>
     </div>
     <p class="note">Googleアカウントがあれば動きます。お支払いはSquareの決済ページ（クレジットカード）。購入後24時間以内に、メールでコピー用リンクをお送りします。</p>
   </section>
