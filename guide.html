@@ -168,6 +168,8 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
 
 
 
+
+
 /* site header / footer */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--paper); }
@@ -238,6 +240,11 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <li>回答はシフト表のその人の行・その日のセルに自動で入る</li></ol>
 <div class="tbl"><table><thead><tr><th scope="col">スタッフの書き方</th><th scope="col">意味</th></tr></thead><tbody><tr><td>12-17</td><td>12時から17時まで（8:30-12 のように分もOK）</td></tr><tr><td class="c">○</td><td>いつもの枠どおり</td></tr><tr><td>休み</td><td>出勤できない（空欄も休み）</td></tr><tr><td>有給</td><td>有給休暇</td></tr></tbody></table></div>
 <p class="muted">締切は初期設定で毎月15日です。シフト表に名前がない人の回答は「未登録の回答」シートに残ります。</p>
+</section>
+<section><h2>飲食店版</h2>
+<p>受け取るときに「飲食店版」を選ぶと、飲食店向けの設定が入ったシートが届きます（価格は同じです）。</p>
+<ul><li>勤務枠はランチ・ディナー・通し・仕込み、ポジションはキッチン・ホール・ドリンク・洗い場・仕込み・レジを最初から設定</li><li>開店・閉店の衛生チェック（手洗い・体調・器具の消毒など）と、冷蔵庫・冷凍庫の温度をスマホのフォームで記録（有料版）</li><li>食材の在庫・発注リスト、消費期限3日前のお知らせ（在庫＋レジ連携・全部セット）</li><li>食材費を入れると、人件費とあわせてFL比率を毎日計算（シフト＋キャスト管理・全部セット）</li></ul>
+<p class="muted">衛生チェックの項目や温度の欄は、スクリプト先頭の「お店ごとの設定」で変えられます。お店の衛生管理計画や保健所の指導に合わせてお使いください。</p>
 </section>
 <section><h2>シフト案を自動で作る（有料）</h2>
 <ol><li>「シフト管理」→「★ シフト案を自動で作る」を押すと「必要人数」シートができる</li><li>勤務枠ごとに、平日と土日に何人いればよいか、必ず入れたいポジション（例：K1 B1＝キッチンに○の人1人以上、レジに○の人1人以上）を入れる。祝日やイベントの日は「特定の日だけ変える」に書く</li><li>もう一度「★ シフト案を自動で作る」を押すと、希望の表のコピー「〇月 (シフト案)」ができる。選ばれなかった希望は灰色になり、メモに元の希望が残る</li><li>「シフト案の結果」シートで、人が足りない枠（赤）と、1人ずつの出勤日数（週◯の目安とくらべて）を確認し、店長さんが調整して確定</li></ol>
