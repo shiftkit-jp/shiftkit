@@ -160,6 +160,8 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
 
 
 
+
+
 /* site header / footer */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--paper); }
@@ -327,7 +329,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   <section>
     <span class="eyebrow">ほかの方法とくらべて</span>
     <h2>シフト管理アプリとも、Excelの手作業とも違うところ</h2>
-    <div class="tbl"><table><thead><tr><th scope="col"></th><th scope="col">月額制のシフト管理アプリ</th><th scope="col">Excelで手作業</th><th scope="col">ShiftKit</th></tr></thead><tbody><tr><th scope="row">料金</th><td>1人あたり月100〜300円ほどが多い（20人なら月2,000〜6,000円）。初期費用がかかる製品も</td><td>0円（ただし毎月の手入力に時間がかかる）</td><td>買い切り1,480円〜。月額0円</td></tr><tr><th scope="row">今のシフト表</th><td>アプリの画面に合わせて作り直すことが多い</td><td>そのまま</td><td>そのまま使える（Excelの表も移せる）</td></tr><tr><th scope="row">希望シフトの集め方</th><td>アプリから提出</td><td>LINEや紙で集めて手で打ち直す</td><td>フォームで送ると表に自動で入る</td></tr><tr><th scope="row">スタッフの準備</th><td>アプリのインストールや登録が必要なことが多い</td><td>いらない</td><td>URLを開くだけ（インストール不要）</td></tr><tr><th scope="row">データの置き場所</th><td>サービスの中（解約後の扱いは製品による）</td><td>自分のパソコン</td><td>自分のGoogleドライブ（解約という考え方がない）</td></tr><tr><th scope="row">得意なこと</th><td>シフトの自動作成、勤怠・給与との連携</td><td>形を自由に作れる</td><td>今の表のまま自動化。希望と必要人数からシフト案も自動で作成（有料版）。キャスト・在庫・衛生記録まで1つのファイル</td></tr><tr><th scope="row">向いていないこと</th><td>—</td><td>人数が増えると手間が増える</td><td>打刻（勤怠）や給与計算ソフトとの連携はしない</td></tr></tbody></table></div>
+    <div class="tbl"><table><thead><tr><th scope="col"></th><th scope="col">月額制のシフト管理アプリ</th><th scope="col">Excelで手作業</th><th scope="col">ShiftKit</th></tr></thead><tbody><tr><th scope="row">料金</th><td>1人あたり月100〜300円ほどが多い（20人なら月2,000〜6,000円）。初期費用がかかる製品も</td><td>0円（ただし毎月の手入力に時間がかかる）</td><td>買い切り1,480円〜。月額0円</td></tr><tr><th scope="row">今のシフト表</th><td>アプリの画面に合わせて作り直すことが多い</td><td>そのまま</td><td>そのまま使える（Excelの表も移せる）</td></tr><tr><th scope="row">希望シフトの集め方</th><td>アプリから提出</td><td>LINEや紙で集めて手で打ち直す</td><td>フォームで送ると表に自動で入る</td></tr><tr><th scope="row">スタッフの準備</th><td>アプリのインストールや登録が必要なことが多い</td><td>いらない</td><td>URLを開くだけ（インストール不要）</td></tr><tr><th scope="row">データの置き場所</th><td>サービスの中（解約後の扱いは製品による）</td><td>自分のパソコン</td><td>自分のGoogleドライブ（解約という考え方がない）</td></tr><tr><th scope="row">得意なこと</th><td>シフトの自動作成、勤怠・給与との連携</td><td>形を自由に作れる</td><td>今の表のまま自動化。希望と必要人数からシフト案も自動で作成（有料版）。キャスト・在庫・衛生記録まで1つのファイル</td></tr><tr><th scope="row">向いていないこと</th><td>—</td><td>人数が増えると手間が増える</td><td>打刻（勤怠）・給与ソフトへの書き出しは標準ではなし（ご希望のお店は個別に相談）</td></tr></tbody></table></div>
     <p class="note">※月額制アプリの料金は、2026年に公表されている一般的な料金水準（従業員1人あたり月100〜300円程度）をもとにした目安です。製品によって異なります。</p>
   </section>
 
@@ -362,7 +364,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <details><summary>フィードバックはスタッフに見られませんか？</summary><p>フィードバックは店長用の管理ファイルにだけ保存され、スタッフが見るシフト表には入りません。</p></details>
       <details><summary>グッズや備品の在庫も管理できますか？</summary><p>できます。現在庫が自動で計算され、発注点を下回った商品は発注リストに並びます。Squareは5分ごとの自動連携、Airレジ・STORESレジはCSVの取り込みに対応しています。スマレジはサポートプランで個別にご相談ください。</p></details>
       <details><summary>Excelで作ったシフト表でも使えますか？</summary><p>使えます。ExcelのファイルをGoogleドライブにアップロードして「Googleスプレッドシートとして保存」すれば、そのURLを貼るだけで読み込めます。表の形は変えなくて大丈夫です。スタッフの名簿や商品リストも、Excelからコピーして貼り付けるだけで移せます。</p></details>
-      <details><summary>月額制のシフト管理アプリとの違いは？</summary><p>ShiftKitは買い切りで月額料金がかからず、今のシフト表をそのまま使えます。データは自分のGoogleドライブに残り、スタッフはアプリを入れずにURLから入力するだけです。有料版（シフト＋キャスト管理・全部セット）では、希望と「必要人数」「ポジション」から、シフト案を自動で作れます。最後の調整は店長さんが決めます。一方で、打刻（勤怠）や給与計算ソフトとの連携はありません。</p></details>
+      <details><summary>月額制のシフト管理アプリとの違いは？</summary><p>ShiftKitは買い切りで月額料金がかからず、今のシフト表をそのまま使えます。データは自分のGoogleドライブに残り、スタッフはアプリを入れずにURLから入力するだけです。有料版（シフト＋キャスト管理・全部セット）では、希望と「必要人数」「ポジション」から、シフト案を自動で作れます。最後の調整は店長さんが決めます。打刻（勤怠）や給与計算ソフトへの書き出しは標準ではありませんが、ご希望のお店にはサポートプランで個別にご相談のうえ導入します。</p></details>
       <details><summary>どんなお店で使えますか？</summary><p>業種を問わず使えます。飲食店のキッチン・ホール、カフェ、小売店、美容室・サロン、ホテル・旅館、アミューズメント施設、介護・福祉、工場・倉庫、イベント運営など、シフトで働く人がいる職場なら、勤務枠・ポジション・スキルを自由に設定できます。1店舗から複数店舗まで対応しています。原宿の動物カフェで、店長さんが困っていた業務を手伝う中で生まれました。</p></details>
     </div>
   </section>
