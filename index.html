@@ -158,6 +158,8 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
 
 
 
+
+
 /* site header / footer */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--paper); }
@@ -247,6 +249,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   </section>
 
   <section>
+    <span class="eyebrow">シフト案の自動作成（有料版）</span>
+    <h2>希望が集まったら、シフト案も自動で</h2>
+    <p>勤務枠ごとに「平日は何人、土日は何人」「キッチンに○の人を1人以上」と決めておくと、集まった希望から下書きのシフトを自動で組みます。今月まだ少ない人を優先するので、出勤日数がかたよりにくくなります。</p>
+    <ul class="steps-simple"><li>希望の表はそのまま。シフト案は別のシートにできる</li><li>人が足りない日・ポジションが足りない日は赤で知らせる</li><li>「月数日」の人は、時間が合う足りない枠に入る</li><li>最後の調整と確定は店長さん</li></ul>
+  </section>
+
+  <section>
     <span class="eyebrow">キャスト管理</span>
     <div class="cast">
       <div>
@@ -318,7 +327,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   <section>
     <span class="eyebrow">ほかの方法とくらべて</span>
     <h2>シフト管理アプリとも、Excelの手作業とも違うところ</h2>
-    <div class="tbl"><table><thead><tr><th scope="col"></th><th scope="col">月額制のシフト管理アプリ</th><th scope="col">Excelで手作業</th><th scope="col">ShiftKit</th></tr></thead><tbody><tr><th scope="row">料金</th><td>1人あたり月100〜300円ほどが多い（20人なら月2,000〜6,000円）。初期費用がかかる製品も</td><td>0円（ただし毎月の手入力に時間がかかる）</td><td>買い切り1,480円〜。月額0円</td></tr><tr><th scope="row">今のシフト表</th><td>アプリの画面に合わせて作り直すことが多い</td><td>そのまま</td><td>そのまま使える（Excelの表も移せる）</td></tr><tr><th scope="row">希望シフトの集め方</th><td>アプリから提出</td><td>LINEや紙で集めて手で打ち直す</td><td>フォームで送ると表に自動で入る</td></tr><tr><th scope="row">スタッフの準備</th><td>アプリのインストールや登録が必要なことが多い</td><td>いらない</td><td>URLを開くだけ（インストール不要）</td></tr><tr><th scope="row">データの置き場所</th><td>サービスの中（解約後の扱いは製品による）</td><td>自分のパソコン</td><td>自分のGoogleドライブ（解約という考え方がない）</td></tr><tr><th scope="row">得意なこと</th><td>シフトの自動作成、勤怠・給与との連携</td><td>形を自由に作れる</td><td>今の表のまま自動化。キャスト・在庫・衛生記録まで1つのファイル</td></tr><tr><th scope="row">向いていないこと</th><td>—</td><td>人数が増えると手間が増える</td><td>シフトの自動作成や打刻はしない（組むのは店長さん）</td></tr></tbody></table></div>
+    <div class="tbl"><table><thead><tr><th scope="col"></th><th scope="col">月額制のシフト管理アプリ</th><th scope="col">Excelで手作業</th><th scope="col">ShiftKit</th></tr></thead><tbody><tr><th scope="row">料金</th><td>1人あたり月100〜300円ほどが多い（20人なら月2,000〜6,000円）。初期費用がかかる製品も</td><td>0円（ただし毎月の手入力に時間がかかる）</td><td>買い切り1,480円〜。月額0円</td></tr><tr><th scope="row">今のシフト表</th><td>アプリの画面に合わせて作り直すことが多い</td><td>そのまま</td><td>そのまま使える（Excelの表も移せる）</td></tr><tr><th scope="row">希望シフトの集め方</th><td>アプリから提出</td><td>LINEや紙で集めて手で打ち直す</td><td>フォームで送ると表に自動で入る</td></tr><tr><th scope="row">スタッフの準備</th><td>アプリのインストールや登録が必要なことが多い</td><td>いらない</td><td>URLを開くだけ（インストール不要）</td></tr><tr><th scope="row">データの置き場所</th><td>サービスの中（解約後の扱いは製品による）</td><td>自分のパソコン</td><td>自分のGoogleドライブ（解約という考え方がない）</td></tr><tr><th scope="row">得意なこと</th><td>シフトの自動作成、勤怠・給与との連携</td><td>形を自由に作れる</td><td>今の表のまま自動化。希望と必要人数からシフト案も自動で作成（有料版）。キャスト・在庫・衛生記録まで1つのファイル</td></tr><tr><th scope="row">向いていないこと</th><td>—</td><td>人数が増えると手間が増える</td><td>打刻（勤怠）や給与計算ソフトとの連携はしない</td></tr></tbody></table></div>
     <p class="note">※月額制アプリの料金は、2026年に公表されている一般的な料金水準（従業員1人あたり月100〜300円程度）をもとにした目安です。製品によって異なります。</p>
   </section>
 
@@ -333,9 +342,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="eyebrow">料金</span>
     <h2>月額0円。必要なところまで選べます</h2>
     <div class="prices">
-      <div class="price"><h3>シフト＋キャスト管理</h3><div class="yen">1,480<small>円・買い切り</small></div><ul><li>希望シフトの自動入力</li><li>キャスト名簿（レベル → ポジション○△×）</li><li>フィードバック記録・キャストカード</li><li>人件費率・扶養アラート・代わり探し</li></ul><a class="cta buy" href="https://square.link/u/pCRffTxU" target="_blank" rel="noopener">購入する</a></div>
+      <div class="price"><h3>シフト＋キャスト管理</h3><div class="yen">1,480<small>円・買い切り</small></div><ul><li>希望シフトの自動入力</li><li>シフト案の自動作成（必要人数・ポジションから）</li><li>キャスト名簿（レベル → ポジション○△×）</li><li>フィードバック記録・キャストカード</li><li>人件費率・扶養アラート・代わり探し</li></ul><a class="cta buy" href="https://square.link/u/pCRffTxU" target="_blank" rel="noopener">購入する</a></div>
       <div class="price"><h3>在庫＋レジ連携</h3><div class="yen">1,480<small>円・買い切り</small></div><ul><li>商品マスタ・入出庫・発注リスト・棚卸</li><li>在庫アラートメール</li><li>Square自動連携・レジCSV取り込み</li><li>賞味期限・消費期限の管理</li></ul><a class="cta buy" href="https://square.link/u/f17P69Q8" target="_blank" rel="noopener">購入する</a></div>
-      <div class="price feat"><h3>全部セット</h3><div class="yen">2,480<small>円・買い切り</small></div><ul><li>左の2つがすべて入ったセット</li><li>開店・閉店チェック／レジ締め／連絡ノート</li><li>導入マニュアル付き</li><li>自分で約15分で設定</li></ul><a class="cta buy" href="https://square.link/u/JgsywBUz" target="_blank" rel="noopener" style="background:var(--pink);color:#fff">購入する</a></div>
+      <div class="price feat"><h3>全部セット</h3><div class="yen">2,480<small>円・買い切り</small></div><ul><li>左の2つがすべて入ったセット</li><li>シフト案の自動作成つき</li><li>開店・閉店チェック／レジ締め／連絡ノート</li><li>導入マニュアル付き</li><li>自分で約15分で設定</li></ul><a class="cta buy" href="https://square.link/u/JgsywBUz" target="_blank" rel="noopener" style="background:var(--pink);color:#fff">購入する</a></div>
     </div>
     <div class="prices two">
       <div class="price"><h3>無料版</h3><div class="yen">0<small>円</small></div><ul><li>希望フォーム → シフト表の自動入力</li><li>LINE公式アカウントで配布</li></ul></div>
@@ -353,7 +362,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <details><summary>フィードバックはスタッフに見られませんか？</summary><p>フィードバックは店長用の管理ファイルにだけ保存され、スタッフが見るシフト表には入りません。</p></details>
       <details><summary>グッズや備品の在庫も管理できますか？</summary><p>できます。現在庫が自動で計算され、発注点を下回った商品は発注リストに並びます。Squareは5分ごとの自動連携、Airレジ・STORESレジはCSVの取り込みに対応しています。スマレジはサポートプランで個別にご相談ください。</p></details>
       <details><summary>Excelで作ったシフト表でも使えますか？</summary><p>使えます。ExcelのファイルをGoogleドライブにアップロードして「Googleスプレッドシートとして保存」すれば、そのURLを貼るだけで読み込めます。表の形は変えなくて大丈夫です。スタッフの名簿や商品リストも、Excelからコピーして貼り付けるだけで移せます。</p></details>
-      <details><summary>月額制のシフト管理アプリとの違いは？</summary><p>ShiftKitは買い切りで月額料金がかからず、今のシフト表をそのまま使えます。データは自分のGoogleドライブに残り、スタッフはアプリを入れずにURLから入力するだけです。一方で、シフトの自動作成や打刻（勤怠）の機能はありません。シフトを組むのは店長さんで、その手前の「集める・打ち込む・数える」をなくす道具です。</p></details>
+      <details><summary>月額制のシフト管理アプリとの違いは？</summary><p>ShiftKitは買い切りで月額料金がかからず、今のシフト表をそのまま使えます。データは自分のGoogleドライブに残り、スタッフはアプリを入れずにURLから入力するだけです。有料版（シフト＋キャスト管理・全部セット）では、希望と「必要人数」「ポジション」から、シフト案を自動で作れます。最後の調整は店長さんが決めます。一方で、打刻（勤怠）や給与計算ソフトとの連携はありません。</p></details>
       <details><summary>どんなお店で使えますか？</summary><p>業種を問わず使えます。飲食店のキッチン・ホール、カフェ、小売店、美容室・サロン、ホテル・旅館、アミューズメント施設、介護・福祉、工場・倉庫、イベント運営など、シフトで働く人がいる職場なら、勤務枠・ポジション・スキルを自由に設定できます。1店舗から複数店舗まで対応しています。原宿の動物カフェで、店長さんが困っていた業務を手伝う中で生まれました。</p></details>
     </div>
   </section>

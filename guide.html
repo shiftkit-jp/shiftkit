@@ -164,6 +164,8 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
 
 
 
+
+
 /* site header / footer */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--paper); }
@@ -234,6 +236,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <li>回答はシフト表のその人の行・その日のセルに自動で入る</li></ol>
 <div class="tbl"><table><thead><tr><th scope="col">スタッフの書き方</th><th scope="col">意味</th></tr></thead><tbody><tr><td>12-17</td><td>12時から17時まで（8:30-12 のように分もOK）</td></tr><tr><td class="c">○</td><td>いつもの枠どおり</td></tr><tr><td>休み</td><td>出勤できない（空欄も休み）</td></tr><tr><td>有給</td><td>有給休暇</td></tr></tbody></table></div>
 <p class="muted">締切は初期設定で毎月15日です。シフト表に名前がない人の回答は「未登録の回答」シートに残ります。</p>
+</section>
+<section><h2>シフト案を自動で作る（有料）</h2>
+<ol><li>「シフト管理」→「★ シフト案を自動で作る」を押すと「必要人数」シートができる</li><li>勤務枠ごとに、平日と土日に何人いればよいか、必ず入れたいポジション（例：K1 B1＝キッチンに○の人1人以上、レジに○の人1人以上）を入れる。祝日やイベントの日は「特定の日だけ変える」に書く</li><li>もう一度「★ シフト案を自動で作る」を押すと、希望の表のコピー「〇月 (シフト案)」ができる。選ばれなかった希望は灰色になり、メモに元の希望が残る</li><li>「シフト案の結果」シートで、人が足りない枠（赤）と、1人ずつの出勤日数（週◯の目安とくらべて）を確認し、店長さんが調整して確定</li></ol>
+<p class="muted">組み方：「必ず入れたいポジション」が○の人を先に選び、残りは今月の出勤がまだ少ない人（名簿やシフト表の「週◯」の目安とくらべて）から順に入れます。社員は少し優先します。「月数日」の人は、希望の時間が枠の半分以上かぶっていれば、人が足りない枠に入ります。退職・休職の人は入れません。</p>
 </section>
 <section><h2>キャスト管理（有料）</h2>
 <ul><li>「キャスト名簿」でレベル（新人・中堅・ベテラン・社員）を選ぶと、入れるポジションが○△×で出る</li>
