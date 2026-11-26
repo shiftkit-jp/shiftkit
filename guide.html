@@ -170,6 +170,8 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding-block
 
 
 
+
+
 /* site header / footer */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--paper); }
@@ -265,7 +267,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <li>「⑩ 在庫アラート」をオンにすると、発注が必要な日だけ毎朝メールが届く</li></ul>
 </section>
 <section><h2>レジ連携（有料）</h2>
-<div class="tbl"><table><thead><tr><th scope="col">レジ</th><th scope="col">つなぎ方</th><th scope="col">反映</th></tr></thead><tbody><tr><td>Square</td><td>「⑪ レジ連携を設定」でアクセストークンを貼る。商品のSKUに商品マスタのコードを入れる</td><td>5分ごとに自動</td></tr><tr><td>Airレジ・STORESレジなど</td><td>書き出したCSVを「⑬ レジのCSVを取り込む」で貼る</td><td>取り込んだとき</td></tr><tr><td>スマレジ</td><td>サポートプランで個別に相談</td><td class="c">—</td></tr></tbody></table></div>
+<div class="tbl"><table><thead><tr><th scope="col">レジ</th><th scope="col">つなぎ方</th><th scope="col">反映</th></tr></thead><tbody><tr><td>Square</td><td>「⑪ レジ連携を設定」でアクセストークンを貼る。商品のSKUに商品マスタのコードを入れる</td><td>5分ごとに自動</td></tr><tr><td>Airレジ・STORESレジなど</td><td>書き出したCSVを「⑬ レジのCSVを取り込む」で貼る</td><td>取り込んだとき</td></tr><tr><td>スマレジ</td><td>取引履歴か商品別売上のCSVを「⑬ レジのCSVを取り込む」で貼る（自動連携はサポートプランで個別に相談）</td><td>取り込んだとき</td></tr></tbody></table></div>
 </section>
 <section><h2>店長ツール（有料）</h2>
 <p>メニュー「店長ツール」→「⑭ 店長ツールを使い始める」を1回押すと、買った版に入っている表がそろいます。</p>
